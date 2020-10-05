@@ -14,7 +14,6 @@ import androidx.core.content.ContextCompat
 import com.dvinfosys.R
 import com.dvinfosys.model.ChildModel
 import com.dvinfosys.model.HeaderModel
-import me.myatminsoe.mdetect.MDetect
 
 /**
  * Created by ktmmoe on 05, October, 2020
@@ -53,7 +52,7 @@ class NavigationListAdapter(
         txtListChild.typeface = if (context.resources.configuration.locales[0].toLanguageTag() == "en") enTypeFace else mmTypeFace
         txtListChild.setTextColor(ContextCompat.getColor(context, R.color.colorAccent))
 
-        txtListChild.text = MDetect.getText(childText.menuName)
+        txtListChild.text = childText.menuName
 
         return view
     }
@@ -90,7 +89,7 @@ class NavigationListAdapter(
         val ivGroupIndicator: ImageView? = view?.findViewById(R.id.ivGroupIndicator)
         val iconMenu: ImageView? = view?.findViewById(R.id.icon_menu)
         lblListHeader?.typeface = if (context.resources.configuration.locales[0].toLanguageTag() == "en") enTypeFace else mmTypeFace
-        lblListHeader?.text = MDetect.getText(header.menuName)
+        lblListHeader?.text = header.menuName
         lblListHeader?.setTextColor(ContextCompat.getColor(context, R.color.colorAccent))
 
         iconMenu?.setBackgroundResource(header.menuIcon)
