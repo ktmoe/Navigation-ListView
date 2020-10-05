@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BodyText">
+        <item name="fontFamily">@font/myanmarpixel</item>
+        <item name="android:fontFamily">@font/myanmarpixel</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+</resources>

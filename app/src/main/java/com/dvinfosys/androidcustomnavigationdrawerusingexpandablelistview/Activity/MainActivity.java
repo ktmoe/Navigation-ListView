@@ -1,12 +1,10 @@
 package com.dvinfosys.androidcustomnavigationdrawerusingexpandablelistview.Activity;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ExpandableListView;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,9 +13,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.dvinfosys.androidcustomnavigationdrawerusingexpandablelistview.R;
-import com.dvinfosys.androidcustomnavigationdrawerusingexpandablelistview.Utils.Common;
-import com.dvinfosys.model.ChildModel;
-import com.dvinfosys.model.HeaderModel;
 import com.dvinfosys.ui.NavigationListView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -61,72 +56,72 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        listView.init(this)
-                .addHeaderModel(new HeaderModel("Home"))
-                .addHeaderModel(new HeaderModel("Cart",  R.drawable.ic_cardbackgroud, true,true, false, Color.WHITE))
-                .addHeaderModel(
-                        new HeaderModel("Categories", -1,true)
-                                .addChildModel(new ChildModel("Men's Fashion"))
-                                .addChildModel(new ChildModel("Woman's Fashion"))
-                                .addChildModel(new ChildModel("Babies and Family"))
-                                .addChildModel(new ChildModel("Health"))
-                )
-                .addHeaderModel(new HeaderModel("Orders"))
-                .addHeaderModel(new HeaderModel("Wishlist"))
-                .addHeaderModel(new HeaderModel("Notifications"))
-                .build()
-                .addOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-                    @Override
-                    public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                        listView.setSelected(groupPosition);
-
-                        //drawer.closeDrawer(GravityCompat.START);
-                        if (id == 0) {
-                            //Home Menu
-                            Common.showToast(context, "Home Select");
-
-                            drawer.closeDrawer(GravityCompat.START);
-                        } else if (id == 1) {
-                            //Cart Menu
-                            Common.showToast(context, "Cart Select");
-                            drawer.closeDrawer(GravityCompat.START);
-                        } /*else if (id == 2) {
-                            //Categories Menu
-                            Common.showToast(context, "Categories  Select");
-                        }*/ else if (id == 3) {
-                            //Orders Menu
-                            Common.showToast(context, "Orders");
-                            drawer.closeDrawer(GravityCompat.START);
-                        } else if (id == 4) {
-                            //Wishlist Menu
-                            Common.showToast(context, "Wishlist Selected");
-                            drawer.closeDrawer(GravityCompat.START);
-                        } else if (id == 5) {
-                            //Notifications Menu
-                            Common.showToast(context, "Notifications");
-                            drawer.closeDrawer(GravityCompat.START);
-                        }
-                        return false;
-                    }
-                })
-                .addOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-                    @Override
-                    public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                        listView.setSelected(groupPosition, childPosition);
-                        if (id == 0) {
-                            Common.showToast(context, "Man's Fashion");
-                        } else if (id == 1) {
-                            Common.showToast(context, "Woman's Fashion");
-                        } else if (id == 2) {
-                            Common.showToast(context, "Babies and Family");
-                        } else if (id == 3) {
-                            Common.showToast(context, "Health");
-                        }
-
-                        drawer.closeDrawer(GravityCompat.START);
-                        return false;
-                    }
-                });
+//        listView.init(this)
+//                .addHeaderModel(new HeaderModel("Home"))
+//                .addHeaderModel(new HeaderModel("Cart",  R.drawable.ic_cardbackgroud, true,true, false, Color.WHITE))
+//                .addHeaderModel(
+//                        new HeaderModel("Categories", -1,true)
+//                                .addChildModel(new ChildModel("Men's Fashion"))
+//                                .addChildModel(new ChildModel("Woman's Fashion"))
+//                                .addChildModel(new ChildModel("Babies and Family"))
+//                                .addChildModel(new ChildModel("Health"))
+//                )
+//                .addHeaderModel(new HeaderModel("Orders"))
+//                .addHeaderModel(new HeaderModel("Wishlist"))
+//                .addHeaderModel(new HeaderModel("Notifications"))
+//                .build()
+//                .addOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+//                    @Override
+//                    public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+//                        listView.setSelected(groupPosition);
+//
+//                        //drawer.closeDrawer(GravityCompat.START);
+//                        if (id == 0) {
+//                            //Home Menu
+//                            Common.showToast(context, "Home Select");
+//
+//                            drawer.closeDrawer(GravityCompat.START);
+//                        } else if (id == 1) {
+//                            //Cart Menu
+//                            Common.showToast(context, "Cart Select");
+//                            drawer.closeDrawer(GravityCompat.START);
+//                        } /*else if (id == 2) {
+//                            //Categories Menu
+//                            Common.showToast(context, "Categories  Select");
+//                        }*/ else if (id == 3) {
+//                            //Orders Menu
+//                            Common.showToast(context, "Orders");
+//                            drawer.closeDrawer(GravityCompat.START);
+//                        } else if (id == 4) {
+//                            //Wishlist Menu
+//                            Common.showToast(context, "Wishlist Selected");
+//                            drawer.closeDrawer(GravityCompat.START);
+//                        } else if (id == 5) {
+//                            //Notifications Menu
+//                            Common.showToast(context, "Notifications");
+//                            drawer.closeDrawer(GravityCompat.START);
+//                        }
+//                        return false;
+//                    }
+//                })
+//                .addOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+//                    @Override
+//                    public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
+//                        listView.setSelected(groupPosition, childPosition);
+//                        if (id == 0) {
+//                            Common.showToast(context, "Man's Fashion");
+//                        } else if (id == 1) {
+//                            Common.showToast(context, "Woman's Fashion");
+//                        } else if (id == 2) {
+//                            Common.showToast(context, "Babies and Family");
+//                        } else if (id == 3) {
+//                            Common.showToast(context, "Health");
+//                        }
+//
+//                        drawer.closeDrawer(GravityCompat.START);
+//                        return false;
+//                    }
+//                });
         //listView.expandGroup(2);
     }
 
