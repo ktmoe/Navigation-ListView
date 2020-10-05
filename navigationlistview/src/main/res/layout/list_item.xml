@@ -7,7 +7,7 @@
     android:paddingBottom="16dp"
     android:background="@color/colorPrimary">
 
-    <me.myatminsoe.mdetect.MMTextView
+    <TextView
         android:id="@+id/lblListItem"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

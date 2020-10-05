@@ -5,7 +5,7 @@ package com.dvinfosys.model
  **/
 
 data class ChildModel (
-        val categoryId: String,
-        val menuName: String,
-        var isSelected: Boolean
+        val categoryId: String = "1",
+        val menuName: String = "World",
+        var isSelected: Boolean = false
 )
